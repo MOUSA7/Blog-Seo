@@ -10,17 +10,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li><a class="nav-link" href="{{route('admin.index')}}" style="text-decoration: none">Admin</a>
+
+                <li><a class="nav-link" href="{{route('blog')}}" style="text-decoration: none">Blog <span class="badge bg-dark text-white">{{$blogs->count()}}</span></a>
                 </li>
+
                 <li><a class="nav-link" href="{{route('categories.index')}}" style="text-decoration: none">Categories</a>
                 </li>
-                <li><a class="nav-link" href="{{route('blog')}}" style="text-decoration: none">Blog <span class="badge bg-dark text-white">{{$blog->count()}}</span></a>
-                </li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
+                @if(Auth::user())
+                    <li><a class="nav-link" href="{{route('dashboard')}}" style="text-decoration: none">Dashboard</a>
+                    </li>
+                @endif
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

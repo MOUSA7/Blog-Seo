@@ -2,6 +2,7 @@
 
 use App\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class CategoryTableSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class CategoryTableSeeder extends Seeder
         $html->name = 'HTML';
         $html->slug = 'html';
         $html->save();
+
 
         $laravel = new Category();
         $laravel->name = 'Laravel';

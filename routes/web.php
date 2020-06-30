@@ -34,6 +34,10 @@ Route::post('blog/{id}/delete','BlogsController@delete')->name('blogs.delete');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('admin','AdminController@index')->name('admin.index');
+Route::get('admin','AdminController@index')->name('dashboard');
+
+Route::get('admin/blogs','AdminController@blogs')->name('admin.blogs');
+
 
 Route::resource('categories','CategoryController');
+Route::resource('admin/users','UsersController');

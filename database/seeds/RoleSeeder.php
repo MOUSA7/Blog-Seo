@@ -17,7 +17,7 @@ class RoleSeeder extends Seeder
         $Admin->save();
 
         $author = new Role();
-        $author->name = 'author';
+        $author->name = 'Author';
         $author->save();
 
         $mentor = new Role();

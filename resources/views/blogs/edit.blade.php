@@ -2,13 +2,13 @@
 
 @section('content')
 
-
+    @include('partials.tinymce')
     <div class="container-fluid">
         <div class="jumbotron">
             <h1>Create Blog</h1>
         </div>
         <div class="col-md-8">
-            <form action="{{route('blogs.update',$blog->id)}}" method="post">
+            <form action="{{route('blogs.update',$blog->id)}}" method="post" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
                 <div class="form-group">
@@ -18,7 +18,7 @@
 
                 <div class="form-group">
                     <label for="body">Body :</label>
-                    <textarea type="text" name="body"  class="form-control"  >{{$blog->body}}</textarea>
+                    <textarea  name="body" class="form-control my-editor" >{{$blog->body}}</textarea>
                 </div>
 
                 <div class="form-group form-check form-check-inline">
@@ -39,6 +39,13 @@
                                value="{{$category->id}} ">
                         <lable class="form-check-label btn-margin-right">{{$category->name}}</lable>
                     @endforeach
+                </div>
+
+                <div class="form-group">
+                    <label class="btn btn-default">
+                        <span class="btn btn-outline- btn-info">Upload Image</span>
+                        <input type="file" name="image" value="{{$blog->image}}" hidden>
+                    </label>
                 </div>
 
                 <div>

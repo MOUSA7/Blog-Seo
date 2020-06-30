@@ -7,6 +7,14 @@
 .jumbotron {
     margin:-55px 0px 20px 0px;
 }
+
+.jumbotron {
+   color: #fff;
+    border-bottom: 1px solid #d3e0e9;
+    border-radius: 0 !important;
+    background: linear-gradient(to right,#3097d4,#f66d9b);
+}
+
 .image {
     width: 50%;
 
